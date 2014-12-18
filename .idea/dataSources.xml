@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="4290537607">
+    <data-source source="LOCAL" name="SQL Server - oss@localhost" uuid="e00b5c54-74ce-491c-b817-dd38f4414b50">
+      <driver-ref>sqlserver.ms</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
+      <jdbc-url>jdbc:sqlserver://localhost:1433;databaseName=oss</jdbc-url>
+      <user-name>sa</user-name>
+      <user-password>dfd9dfdfdfc4dfc9dfc2dfcbdfc5</user-password>
+      <schema-pattern>oss.*</schema-pattern>
+      <default-schemas>oss.*</default-schemas>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+
