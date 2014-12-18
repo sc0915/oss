@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <constant name="struts.i18n.reload" value="false" />
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.custom.i18n.resources" value="globalMessages" />
+
+    <package name="spcx" extends="struts-default,json-default" namespace="/spcx">
+
+        <action name="spcxpage" class="com.shinowit.actions.ProStatusInfoPageAction" method="tmpsipage">
+            <result type="json">
+                <param name="excludeProperties">tmpsilist.*.merchandiseInfo</param>
+            </result>
+        </action>
+
+        <action name="spcxinsert" class="com.shinowit.actions.ProStatusInfoInsertAction" method="tmpsiinsert">
+            <result type="json"></result>
+        </action>
+
+        <action name="spcxupdate" class="com.shinowit.actions.ProStatusInfoUpdateAction" method="tmpsiupdate">
+                <result type="json"></result>
+        </action>
+
+        <action name="spcxdelmore" class="com.shinowit.actions.ProStatusInfoDeleteAction" method="tmpsidelmore">
+            <result type="json"></result>
+        </action>
+
+        <action name="spcxdelone" class="com.shinowit.actions.ProStatusInfoDeleteAction" method="tmpsidelone">
+            <result type="json"></result>
+        </action>
+
+        <action name="spcxupdate" class="com.shinowit.actions.ProStatusInfoUpdateAction" method="tmpsiupdate">
+            <result type="json"></result>
+        </action>
+
+    </package>
+
+
+
+</struts>

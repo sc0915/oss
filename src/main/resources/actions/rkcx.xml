@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+
+    <package name="rkcx" extends="inter" namespace="/rkcx">
+
+        <action name="instockpage" class="com.shinowit.actions.InStockPageAction" method="instockpage">
+            <result type="json">
+                <param name="excludeProperties">
+                    instocklist.*.detaInfo
+                </param>
+            </result>
+        </action>
+
+        <action name="indetapage" class="com.shinowit.actions.InStockDetailsInfoPageAction" method="indetapage">
+            <result type="json">
+                <param name="excludeProperties">
+                    indetalist.*.detaInfo,
+                    indetalist.*.operUser,
+                    indetalist.*.supplierInfo,
+                    indetalist.*.merchandiseCInfo,
+                    indetalist.*.proStatusInfo,
+                    indetalist.*.unitInfo
+                </param>
+            </result>
+        </action>
+
+
+        <action name="indetadel" class="com.shinowit.actions.InStockDetailsInfoDeleteAction" method="indetadel">
+            <result type="json"></result>
+        </action>
+
+        <action name="instockdel" class="com.shinowit.actions.InStockDeleteAction" method="instockdel">
+            <result type="json"></result>
+        </action>
+
+        <action name="instockupdate" class="com.shinowit.actions.InStockUpdateAction" method="stockupdate">
+            <result type="json"></result>
+        </action>
+
+
+
+    </package>
+
+
+
+</struts>

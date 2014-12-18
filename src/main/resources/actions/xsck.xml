@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+    <package name="xsck" extends="inter" namespace="/xsck">
+
+
+        <action name="outstockinsert" class="com.shinowit.actions.OutStockInfoInsertAction" method="outstockinsert">
+            <result type="json"></result>
+        </action>
+
+
+        <action name="tMestocksinfo" class="com.shinowit.actions.StockInfoPageAction" method="tMestocksinfo">
+            <result type="json">
+                <param name="excludeProperties">
+                    tMestocksinfoList.*.merchandiseInfo
+                </param>
+            </result>
+        </action>
+
+        <action name="outstockpage" class="com.shinowit.actions.OutStockInfoPageAction" method="outstockpage">
+            <result type="json">
+                <param name="excludeProperties">
+                    tMestocksinfoList.*.merchandiseInfo
+                </param>
+            </result>
+        </action>
+
+
+
+        <action name="detapage" class="com.shinowit.actions.OutStockDetailsInfoPageAction" method="detapage">
+            <result type="json">
+                <param name="excludeProperties">
+                    outDetailsList.*.orderInfo,
+                    outDetailsList.*.operUser
+                </param>
+            </result>
+        </action>
+
+        <action name="outstockdel" class="com.shinowit.actions.OutStockInfoDelteAction" method="outstockdel">
+            <result type="json"></result>
+        </action>
+
+        <action name="outstockupdate" class="com.shinowit.actions.OutStockInfoUpdateAction" method="outstockupdate">
+            <result type="json"></result>
+        </action>
+
+
+    </package>
+
+
+
+</struts>

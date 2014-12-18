@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <constant name="struts.i18n.reload" value="false" />
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.custom.i18n.resources" value="globalMessages" />
+
+    <package name="spdw" extends="struts-default,json-default" namespace="/spdw">
+
+        <action name="spdwpage" class="com.shinowit.actions.UnitInfoPageAction" method="uipage">
+            <result type="json"></result>
+        </action>
+
+        <action name="spdwinsert" class="com.shinowit.actions.UnitInfoInsertAction" method="uiinsert">
+            <result type="json"></result>
+        </action>
+
+        <action name="spdwupdate" class="com.shinowit.actions.UnitInfoUpdateAction" method="uiupdate">
+            <result type="json"></result>
+        </action>
+
+        <action name="spdwdelmore" class="com.shinowit.actions.UnitInfoDeleteAction" method="uidelmore">
+            <result type="json"></result>
+        </action>
+
+        <action name="spdwdelone" class="com.shinowit.actions.UnitInfoDeleteAction" method="uidelone">
+            <result type="json"></result>
+        </action>
+
+
+    </package>
+
+
+
+</struts>

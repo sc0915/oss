@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <constant name="struts.i18n.reload" value="false" />
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.custom.i18n.resources" value="globalMessages" />
+
+    <package name="default" extends="struts-default,json-default" namespace="/">
+
+
+
+    </package>
+
+
+    <include file="actions/login.xml"></include>
+    <include file="actions/main.xml"></include>
+    <include file="actions/restore.xml"></include>
+    <include file="actions/drp.xml"></include>
+    <include file="actions/spcx.xml"></include>
+    <include file="actions/data.xml"></include>
+    <include file="actions/spdw.xml"></include>
+    <include file="actions/cgrk.xml"></include>
+    <include file="actions/inter.xml"></include>
+    <include file="actions/logout.xml"></include>
+    <include file="actions/rkcx.xml"></include>
+    <include file="actions/jsstore.xml"></include>
+    <include file="actions/xsck.xml"></include>
+    <include file="actions/system.xml"></include>
+</struts>

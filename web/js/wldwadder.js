@@ -1,0 +1,56 @@
+/**
+ * Created by SC on 2014/11/11.
+ */
+Ext.define("js.wldwadder",{
+    id:"wldwadder",
+    extend:"Ext.grid.Panel",
+    initComponent: function () {
+        var me=this;
+        var mystore=Ext.create("Ext.data.Store",{
+            proxy:{
+                type:"ajax",
+                url:"/restore/supplier",
+                reader:{
+                    type:"json",
+                    root:"supplierlist",
+                    totalProperty:'sumcount'
+                }
+            },
+            fields:['id','supplierId','supplierName','supplierAb','address','linkName','linkTel','qq','email','sortId','state'
+            ],
+            autoLoad:true
+        });
+        mystore.load({
+            params:{
+                start:0,
+                limit:5
+            }
+        });
+        Ext.apply(this,{
+            title:"供应商地址信息",
+            closable:true,
+            id:'wldwadder',
+            store:mystore,
+            columns:[
+                {text:'递增流水号',dataIndex:'id',hidden:true},
+                {text:'供应商编码',dataIndex:'supplierId'},
+                {text:'供应商名称',dataIndex:'supplierName'},
+                {text:'供应商助记码',dataIndex:'supplierAb',hidden:true},
+                {text:'地址',dataIndex:'address'},
+                {text:'联系人',dataIndex:'linkName',hidden:true},
+                {text:'联系电话',dataIndex:'linkTel',hidden:true},
+                {text:'QQ',dataIndex:'qq',hidden:true},
+                {text:'Email',dataIndex:'email',hidden:true},
+                {text:'排序编码',dataIndex:'sortId',hidden:true},
+                {text:'状态',dataIndex:'state',hidden:true}
+            ],
+            dockedItems:[{
+                xtype:'pagingtoolbar',
+                store:mystore,
+                dock:'bottom',
+                displayInfo:true
+            }]
+        });
+        this.callParent();
+    }
+});

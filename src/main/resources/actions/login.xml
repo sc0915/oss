@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <constant name="struts.i18n.reload" value="false" />
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.custom.i18n.resources" value="globalMessages" />
+
+    <package name="login" extends="struts-default,json-default" namespace="/login">
+
+
+        <action name="log" class="com.shinowit.actions.LoginAction">
+            <result>/WEB-INF/views/login.jsp</result>
+        </action>
+
+    <action name="login" class="com.shinowit.actions.LoginAction" method="loginuser">
+        <result type="json">
+            <param name="excludeProperties">operlist.*.stAuRoleInfoByRoleId,operlist.*.stBaLogInfosByOperId,operlist.*.stMeInStockInfosByOperId,operlist.*.stMeOrderInfosByOperId,operlist.*.stMeOutStockInfosByOperId</param>
+        </result>
+    </action>
+
+    </package>
+
+
+
+</struts>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <constant name="struts.i18n.reload" value="false" />
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.custom.i18n.resources" value="globalMessages" />
+
+    <package name="drp" extends="struts-default,json-default" namespace="/drp">
+
+        <action name="spwhpage" class="com.shinowit.actions.MerchandiseCInfoPageAction" method="tmmcipage">
+            <result type="json"></result>
+        </action>
+
+        <action name="spwhinsert" class="com.shinowit.actions.MerchandiseCInfoinsertAction" method="tmmciinsert">
+            <result type="json"></result>
+        </action>
+
+        <action name="spwhdeletemore" class="com.shinowit.actions.MerchandiseCInfoSelectAction" method="tmmcidelete">
+            <result type="json"></result>
+        </action>
+
+        <action name="spwhdeleteone" class="com.shinowit.actions.MerchandiseCInfoSelectAction" method="tmmcideleteone">
+            <result type="json"></result>
+        </action>
+
+        <action name="spwhdupdage" class="com.shinowit.actions.MerchandiseCInfoUpdateAction" method="tmmciupdate">
+            <result type="json"></result>
+        </action>
+
+
+    </package>
+
+
+
+</struts>

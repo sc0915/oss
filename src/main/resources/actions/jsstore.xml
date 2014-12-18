@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <!--<constant name="struts.i18n.reload" value="false" />-->
+    <!--<constant name="struts.devMode" value="true" />-->
+    <!--<constant name="struts.custom.i18n.resources" value="globalMessages" />-->
+
+    <package name="store" extends="struts-default,json-default" namespace="/store">
+
+        <action name="tMeMerchandiseInfo" class="com.shinowit.actions.StoreAction" method="tMeMerchandiseInfo">
+            <result type="json">
+                <param name="excludeProperties">
+                    tMeMerchandiseInfoList.*.merchandiseCInfo,
+                    tMeMerchandiseInfoList.*.proStatusInfo,
+                    tMeMerchandiseInfoList.*.unitInfo
+                </param>
+            </result>
+        </action>
+
+        <action name="tAuOperInfo" class="com.shinowit.actions.StoreAction" method="tAuOperInfo">
+            <result type="json">
+                <param name="excludeProperties">
+                    tAuOperInfoList.*.roleInfo
+                </param>
+            </result>
+        </action>
+
+
+        <action name="tBaSupplierInfo" class="com.shinowit.actions.StoreAction" method="tBaSupplierInfo">
+            <result type="json"></result>
+        </action>
+
+        <action name="tMeStockInfo" class="com.shinowit.actions.StoreAction" method="tMeStockInfo">
+            <result type="json">
+                <param name="excludeProperties">
+                    tMeStockInfoList.*.merchandiseInfo
+                </param>
+            </result>
+        </action>
+
+
+        <action name="operInfo" class="com.shinowit.actions.StoreAction" method="operInfo">
+            <result type="json">
+                <param name="excludeProperties">
+                    roleInfoList.*.authorizationList,
+                    roleInfoList.*.operInfoList
+                </param>
+            </result>
+        </action>
+
+
+        <action name="stockpage" class="com.shinowit.actions.StockInfoPageAction" method="stockpage">
+            <result type="json">
+                <param name="excludeProperties">
+                    tMestocksinfoList.*.merchandiseCInfo,
+                    tMestocksinfoList.*.proStatusInfo,
+                    tMestocksinfoList.*.unitInfo
+                </param>
+        </result>
+        </action>
+
+
+        <action name="stockInfo" class="com.shinowit.actions.StoreAction" method="tMeStockInfo">
+            <result type="json">
+                <param name="excludeProperties">
+                    tMestocksinfoList.*.merchandiseCInfo,
+                    tMestocksinfoList.*.proStatusInfo,
+                    tMestocksinfoList.*.unitInfo
+                </param>
+            </result>
+        </action>
+
+
+    </package>
+
+
+
+</struts>

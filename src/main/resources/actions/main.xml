@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <constant name="struts.i18n.reload" value="false" />
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.custom.i18n.resources" value="globalMessages" />
+
+
+    <package name="onemain" extends="inter" namespace="/">
+        <action name="one" class="com.shinowit.actions.MainAction">
+            <result>/WEB-INF/views/main.jsp</result>
+        </action>
+    </package>
+
+
+
+    <package name="main" extends="struts-default,json-default" namespace="/main">
+
+        <action name="onemenu" class="com.shinowit.actions.MainAction" method="menu">
+            <result type="json" name="success"></result>
+        </action>
+
+        <action name="restore" class="com.shinowit.actions.MainAction" method="restore">
+            <result type="json"></result>
+        </action>
+
+        <action name="sell" class="com.shinowit.actions.MainAction" method="sell">
+            <result type="json"></result>
+        </action>
+
+        <action name="menusystem" class="com.shinowit.actions.MainAction" method="menusystem">
+            <result type="json"></result>
+        </action>
+
+        <action name="drp" class="com.shinowit.actions.MainAction" method="drp">
+            <result type="json"></result>
+        </action>
+
+        <action name="store" class="com.shinowit.actions.MainAction" method="store">
+            <result type="json"></result>
+        </action>
+
+        <action name="menudata" class="com.shinowit.actions.MainAction" method="menudata">
+            <result type="json"></result>
+        </action>
+        
+        <action name="tree" class="com.shinowit.actions.TreeAction" method="tree">
+            <result type="json"></result>
+        </action>
+
+
+        <action name="viewpie" class="com.shinowit.actions.ViewPieAction" method="viewpie">
+            <result type="json"></result>
+        </action>
+
+        <action name="viewinstock" class="com.shinowit.actions.ViewInstockAction" method="viewinstock">
+            <result type="json"></result>
+        </action>
+
+        <action name="instock" class="com.shinowit.actions.MainAction" method="instock">
+            <result type="json">
+                <param name="excludeProperties">
+                    inStockInfoList.*.detaInfo,
+                    inStockInfoList.*.operUser,
+                    inStockInfoList.*.supplierInfo
+                </param>
+            </result>
+        </action>
+
+        <action name="linepie" class="com.shinowit.actions.LineAction" method="pie">
+            <result type="json"></result>
+        </action>
+
+    </package>
+
+
+
+</struts>

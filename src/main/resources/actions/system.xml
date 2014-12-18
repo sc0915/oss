@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+
+    <package name="system" extends="inter" namespace="/system">
+
+        <action name="rolepage" class="com.shinowit.actions.RoleInfoAction" method="rolepage">
+            <result type="json">
+                <param name="excludeProperties">
+                    roleInfoList.*.authorizationList,
+                    roleInfoList.*.operInfoList
+                </param>
+            </result>
+        </action>
+
+
+        <action name="roletree" class="com.shinowit.actions.RoleTreeAction" method="roletree">
+            <result type="json"></result>
+        </action>
+
+
+        <action name="roleinsert" class="com.shinowit.actions.RoleInsertAction" method="roleinsert">
+            <result type="json"></result>
+        </action>
+
+
+        <action name="roleupdate" class="com.shinowit.actions.RoleUpdateAction" method="roleupdate">
+            <result type="json"></result>
+        </action>
+
+
+        <action name="roledel" class="com.shinowit.actions.RoleInfoDeleteAction" method="roledel">
+            <result type="json"></result>
+        </action>
+
+        <action name="roledis" class="com.shinowit.actions.RoleDisableAction" method="roledis">
+            <result type="json"></result>
+        </action>
+
+        <action name="roledistree" class="com.shinowit.actions.RoleTreeDispalyAction" method="roledistree">
+            <result type="json"></result>
+        </action>
+
+
+
+
+    </package>
+
+
+
+</struts>

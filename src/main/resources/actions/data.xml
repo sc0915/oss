@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <constant name="struts.i18n.reload" value="false" />
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.custom.i18n.resources" value="globalMessages" />
+
+    <package name="data" extends="struts-default,json-default" namespace="/data">
+
+        <action name="tmmipage" class="com.shinowit.actions.MerchandiseInfoPageAction" method="tmmipage">
+            <result type="json">
+                <param name="excludeProperties">
+                    tmmilist.*.merchandiseInfo
+                </param>
+            </result>
+        </action>
+
+        <action name="tmmiinsert" class="com.shinowit.actions.MerchandiseInfoInsertAction" method="tmmiinsert">
+            <result type="json"></result>
+        </action>
+
+        <action name="tmmiupdate" class="com.shinowit.actions.MerchandiseInfoUpdateAction" method="tmmiupdate">
+            <result type="json"></result>
+        </action>
+
+        <action name="tmmidelmore" class="com.shinowit.actions.MerchandiseInfoDeleteAction" method="tmmidelmore">
+            <result type="json"></result>
+        </action>
+
+        <action name="tmmidelone" class="com.shinowit.actions.MerchandiseInfoDeleteAction" method="tmmidelone">
+            <result type="json"></result>
+        </action>
+
+        <action name="operpage" class="com.shinowit.actions.OperInfoPageAction" method="operpage">
+            <result type="json">
+                <param name="excludeProperties">operlist.*.authorizationList</param>
+            </result>
+        </action>
+
+        <action name="operinsert" class="com.shinowit.actions.OperInfoInsertAction" method="operinsert">
+            <result type="json"></result>
+        </action>
+
+        <action name="operupdate" class="com.shinowit.actions.OperInfoUpdateAction" method="operupdate">
+            <result type="json"></result>
+        </action>
+
+    </package>
+
+
+
+</struts>

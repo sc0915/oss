@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+
+    <package name="inter" abstract="true" extends="struts-default,json-default" namespace="/inter">
+
+        <interceptors>
+            <interceptor name="session" class="com.shinowit.inter.LoginInter"></interceptor>
+            <interceptor-stack name="mystack">
+                <interceptor-ref name="json"></interceptor-ref>
+                <interceptor-ref name="session"></interceptor-ref>
+                <interceptor-ref name="defaultStack"></interceptor-ref>
+            </interceptor-stack>
+        </interceptors>
+
+        <default-interceptor-ref name="mystack"></default-interceptor-ref>
+
+
+        <global-results>
+            <result name="faile">/WEB-INF/views/login.jsp</result>
+        </global-results>
+
+    </package>
+
+
+
+
+</struts>
